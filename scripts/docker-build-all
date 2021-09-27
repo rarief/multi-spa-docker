@@ -1,0 +1,36 @@
+#!/bin/bash
+
+GREEN='\033[0;32m'
+NC='\033[0m'
+SECONDS=0
+
+echo -e "${GREEN}Process starts${NC}"
+
+echo -e "${GREEN}Building image${NC}"
+
+# Building images
+build_func () {
+     cd ./$1/
+     npm run build:docker
+     cd -
+}
+
+for i in root app-one app-two app-three
+do
+     build_func $i &
+done
+wait
+
+echo -e "${GREEN}Building image done!${NC}"
+
+# Cleaning images
+# echo -e "${GREEN}Cleaning up intermediate images${NC}"
+# list=$(docker images -q -f "dangling=true" -f "label=autodelete=true")
+# if [ -n "$list" ]; then
+#      docker rmi $list
+# fi
+# echo -e "${GREEN}Cleaning up intermediate images done${NC}"
+
+# Report
+duration=$SECONDS
+echo -e "${GREEN}Process completed${NC} in $(($duration / 60)) minutes and $(($duration % 60)) seconds."

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+appname="$(node -e "console.log($(cat package.json)['name'])")"
+echo -e "Building: ${GREEN}$appname${NC}"
+docker build -q -t ${appname} .

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo -e "${GREEN}Cleaning up intermediate images${NC}"
+list=$(docker images -q -f "dangling=true" -f "label=autodelete=true")
+if [ -n "$list" ]; then
+     docker rmi $list
+fi
+echo -e "${GREEN}Cleaning up intermediate images done${NC}"
+
+duration=$SECONDS
+# echo "$(($duration / 60)) minutes and $(($duration % 60)) seconds elapsed."
+echo -e "${GREEN}Process completed${NC} in $(($duration / 60)) minutes and $(($duration % 60)) seconds."
