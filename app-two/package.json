@@ -1,0 +1,19 @@
+{
+  "name": "app-two",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "dev:host": "nuxt --hostname '0' --port 8000",
+    "build": "nuxt build",
+    "build:docker": "bash ./scripts/build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "inspect:webpack": "nuxt webpack"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "nuxt": "^2.14.6"
+  },
+  "devDependencies": {}
+}

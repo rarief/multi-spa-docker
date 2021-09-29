@@ -32,3 +32,11 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.app-one.rule=PathPrefix(`/app-one`)"
       - "traefik.http.routers.app-one.entrypoints=web"
+
+  app-two:
+    image: "app-two"
+    container_name: "app-two"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.app-two.rule=PathPrefix(`/app-two`)"
+      - "traefik.http.routers.app-two.entrypoints=web"
