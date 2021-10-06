@@ -22,15 +22,6 @@ function App() {
         </a>
       </header>
     </div>
-    // <div id="app">
-    //   <nav>
-    //     <a href="/">&larr; Back</a>
-    //   </nav>
-
-    //   <h1>Welcome to App Three</h1>
-    //   <p>This is a React application</p>
-    //   <img src={logo} alt="react logo" />
-    // </div>
   );
 }
 

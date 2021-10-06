@@ -1,12 +1,9 @@
 <template>
-  <div id="app">
-    <nav>
+  <div>
+    <div class="back-button-container">
       <a href="/">&larr; Back</a>
-    </nav>
-
-    <h1>Welcome to App Two</h1>
-    <p>This is a Nuxt application</p>
-    <img src="../assets/nuxt-logo.png" />
+    </div>
+    <Tutorial/>
   </div>
 </template>
 
@@ -14,14 +11,22 @@
 export default {}
 </script>
 
-<style>
-#app {
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
+<style scoped>
+body {
+  margin: 0;
 }
-nav > * {
-  margin-right: 20px;
+.back-button-container {
+  padding: 10px 15px;
+  text-align: left;
+  background-color: #ff7f50; 
+}
+.back-button-container a {
   text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  color: #111;
+}
+.back-button-container a:hover {
+  text-decoration: underline;
 }
 </style>

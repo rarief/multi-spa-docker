@@ -11,11 +11,11 @@ echo -e "${GREEN}Building image${NC}"
 # Building images
 build_func () {
      cd ./$1/
-     npm run build:docker
+     yarn build:docker
      cd -
 }
 
-for i in root app-one app-two app-three
+for i in app-root app-one app-two app-three
 do
      build_func $i &
 done
