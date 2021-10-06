@@ -40,3 +40,11 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.app-two.rule=PathPrefix(`/app-two`)"
       - "traefik.http.routers.app-two.entrypoints=web"
+
+  app-three:
+    image: "app-three"
+    container_name: "app-three"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.app-three.rule=PathPrefix(`/app-three`)"
+      - "traefik.http.routers.app-three.entrypoints=web"
