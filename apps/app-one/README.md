@@ -1,42 +1,39 @@
-# App Vue
+# Vue.js app
 
 ## Installation
 
 ```bash
+# install dependencies
 yarn
 ```
 
-## Usage
-
 ### Run locally
+
+You can run the app locally just like a regular SPA
 
 ```bash
 yarn serve
 ```
 
-### Build docker image
+Another way of running the app is by building the docker image and to run the built image
 
 ```bash
+# build the docker image
 yarn build:docker
-```
 
-The docker image can be run using the following command:
-
-```bash
-# replace <port> and <app-name>
+# replace `<app-name>` with the application name
+# as defined in the `package.json` name property
 docker run -ti -p <port>:80 --rm <app-name>
 
 # for example
 docker run -ti -p 8080:80 --rm app-vue
+
+# the project is accessible at `localhost:8080/app-vue`
 ```
 
-It is important to set the `application-name` the same with the application name defined in the `package.json` file. After running the command, the project is accessible at `localhost:8080/app-vue`.
+## Development
 
-## Explanation
-
-### Configuration Steps
-
-1. Create a `vue.config.js` file and add the following code
+1. Create a `vue.config.js` file
 
     ```javascript
     module.exports = {
@@ -44,7 +41,7 @@ It is important to set the `application-name` the same with the application name
     }
     ```
 
-1. Create an `nginx.conf` file with the following code
+1. Create an `nginx.conf` file
 
     ```conf
     user  nginx;
@@ -76,7 +73,7 @@ It is important to set the `application-name` the same with the application name
     }
     ```
 
-1. Create a `Dockerfile` with the following code
+1. Create a `Dockerfile`
 
     ```docker
     FROM node:latest as build-stage
@@ -95,7 +92,7 @@ It is important to set the `application-name` the same with the application name
     COPY nginx.conf /etc/nginx/nginx.conf
     ```
 
-1. Create a bash script for executing the docker image building process
+1. Add a bash script for executing the docker image building process
 
     ```bash
     #!/bin/bash
@@ -116,4 +113,5 @@ It is important to set the `application-name` the same with the application name
     ```
 
 ## License
+
 [MIT](https://choosealicense.com/licenses/mit/)
