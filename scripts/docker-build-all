@@ -10,7 +10,7 @@ echo -e "${GREEN}Building image${NC}"
 
 # Building images
 build_func () {
-     cd ./$1/
+     cd ./apps/$1/
      yarn build:docker
      cd -
 }
